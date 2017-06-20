@@ -24,15 +24,15 @@
   },
   "scripts": {
     "eslint": "./node_modules/.bin/eslint ./scr",
-    "test": "cross-env NODE_ENV=test && mocha --recursive --require babel-core/register || exit 0",
-    "proxy": "cross-env NODE_ENV=development && nodemon --watch src --exec babel-node -- src/proxy.js",
-    "server1": "cross-env NODE_ENV=development && nodemon --watch src --exec babel-node -- src/server1.js",
-    "server2": "cross-env NODE_ENV=development && nodemon --watch src --exec babel-node -- src/server2.js",
-    "server3": "cross-env NODE_ENV=development && nodemon --watch src --exec babel-node -- src/server3.js",
+    "test": "cross-env NODE_ENV=test mocha --recursive --require babel-core/register || exit 0",
+    "proxy": "cross-env NODE_ENV=development nodemon --watch src --exec babel-node -- src/proxy.js",
+    "server1": "cross-env NODE_ENV=development nodemon --watch src --exec babel-node -- src/server1.js",
+    "server2": "cross-env NODE_ENV=development nodemon --watch src --exec babel-node -- src/server2.js",
+    "server3": "cross-env NODE_ENV=development nodemon --watch src --exec babel-node -- src/server3.js",
     "clean": "rimraf dist/*.*",
     "build": " npm run clean && babel -d ./dist ./src",
     "prestart": "npm run build",
-    "start": "cross-env NODE_ENV=production && node dist/proxy.js"
+    "start": "cross-env NODE_ENV=production node dist/proxy.js"
   },
   "keywords": [
     "node",
